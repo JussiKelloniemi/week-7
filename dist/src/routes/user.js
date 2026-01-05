@@ -23,11 +23,12 @@ router.post("/register", (0, express_validator_1.body)("email").trim().escape(),
         }
         const salt = bcrypt_1.default.genSaltSync(10);
         const hash = bcrypt_1.default.hashSync(req.body.password, salt);
-        users.push({
+        const newUser = {
             email: req.body.email,
             password: hash
-        });
-        return res.status(200).json({ messsage: "User registered successfully" });
+        };
+        users.push(newUser);
+        return res.status(200).json(newUser);
     }
     catch (error) {
         console.error(`Error during registration: ${error}`);

@@ -33,12 +33,13 @@ router.post("/register",
         const salt: string = bcrypt.genSaltSync(10)
         const hash: string = bcrypt.hashSync(req.body.password, salt)
 
-        users.push({
+        const newUser = {
             email: req.body.email,
             password: hash
-        })
+        }
+        users.push(newUser)
 
-        return res.status(200).json({messsage: "User registered successfully"})
+        return res.status(200).json(newUser)
     } catch(error: any) {
         console.error(`Error during registration: ${error}`)
         return res.status(500).json({error: "Internal Server Error"})
