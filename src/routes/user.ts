@@ -13,8 +13,8 @@ interface UserData {
 const users: UserData[] = []
 
 router.post("/register",
-    body("email").trim().isLength({min: 3}).escape(),
-    body("password").isLength({min: 5}),
+    body("email").trim().escape(),
+    body("password"),
     async (req: Request, res: Response) => {
         const errors: Result<ValidationError> = validationResult(req)
 

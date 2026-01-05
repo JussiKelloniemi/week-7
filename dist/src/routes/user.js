@@ -9,7 +9,7 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
 // import jwt, { JwtPayload } from 'jsonwebtoken'
 const router = (0, express_1.Router)();
 const users = [];
-router.post("/register", (0, express_validator_1.body)("email").trim().isLength({ min: 3 }).escape(), (0, express_validator_1.body)("password").isLength({ min: 5 }), async (req, res) => {
+router.post("/register", (0, express_validator_1.body)("email").trim().escape(), (0, express_validator_1.body)("password"), async (req, res) => {
     const errors = (0, express_validator_1.validationResult)(req);
     if (!errors.isEmpty()) {
         console.log(errors);
