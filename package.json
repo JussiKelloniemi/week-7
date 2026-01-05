@@ -11,12 +11,17 @@
     "start": "tsc-watch --onSuccess \"nodemon dist/server.js\""
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "express-validator": "^7.3.1",
     "mongoose": "^9.0.0",
     "morgan": "^1.10.1",
     "path": "^0.12.7"
   },
   "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.5",
     "@types/morgan": "^1.9.10",
     "@types/node": "^24.10.1",

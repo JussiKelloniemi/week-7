@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const express_validator_1 = require("express-validator");
 const bcrypt_1 = __importDefault(require("bcrypt"));
+// import jwt, { JwtPayload } from 'jsonwebtoken'
 const router = (0, express_1.Router)();
 const users = [];
 router.post("/register", (0, express_validator_1.body)("email").trim().isLength({ min: 3 }).escape(), (0, express_validator_1.body)("password").isLength({ min: 5 }), async (req, res) => {

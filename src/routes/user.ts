@@ -1,7 +1,7 @@
 import { Request, Response, Router } from 'express'
 import { body, Result, ValidationError, validationResult } from 'express-validator'
 import bcrypt from 'bcrypt'
-import jwt, { JwtPayload } from 'jsonwebtoken'
+// import jwt, { JwtPayload } from 'jsonwebtoken'
 
 const router: Router = Router()
 
